@@ -248,7 +248,7 @@ class QuesAty extends Component{
             <Container style={styles.mainView}>
 
                 <View style= {styles.timerView}>
-                	<TimerCountdown
+                  <TimerCountdown
                     style={styles.timerText}
                     initialSecondsRemaining={10000}
                     onTimeElapsed={() => this.timeComp()}
@@ -267,7 +267,27 @@ class QuesAty extends Component{
                     </CardItem>
                 </Card>
                 </View>
-                
+                <View style= {styles.optionView}>
+                    
+                <Button bordered light block large
+                    onPress = {this.onPress}
+                    >
+                            <Text style = {styles.optionText}>{this.state.cc[(this.state.flagList[this.state.questionCount]+20)%184]['name']}</Text>
+                    </Button>
+              
+               
+                    <Button bordered light block large>
+                            <Text style = {styles.optionText}>{this.state.viewC}</Text>
+                    </Button>
+           
+                    <Button bordered light block large>
+                            <Text style = {styles.optionText}>{this.state.questionCount}</Text>
+                    </Button>
+
+                    <Button bordered light block large>
+                            <Text style = {styles.optionText}>{this.state.cc[this.state.flagList[this.state.questionCount]]['name']}</Text>
+                    </Button>
+                </View>
             </Container>
             :
             <Container>
@@ -286,9 +306,9 @@ class QuesAty extends Component{
 
 const styles = StyleSheet.create({
 mainView:{
-	flex: 1,
-	justifyContent:  'space-around',
-	alignItems:  'center',
+  flex: 1,
+  justifyContent:  'space-around',
+  alignItems:  'center',
     borderColor: '#455A64',
     borderWidth: 4,
     borderStyle: 'solid' ,
@@ -351,6 +371,24 @@ O3:{
     backgroundColor: '#B3E5FC',
     borderRadius: 20,
 
+},
+O4:{
+    flex: 1,
+    padding: 4,
+    alignItems:  'center',
+    borderRadius: 20,
+    margin: 2,
+    backgroundColor: '#455A64',
+
+},
+optionText:{
+    fontSize: 30
+},
+
+
+flagImg:{
+    width: 64,
+     height: 64
 }
 });
 
